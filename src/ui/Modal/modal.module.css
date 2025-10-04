@@ -1,0 +1,77 @@
+.modal {
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+.modal_title {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 24px;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.mission_title {
+    margin: 0;
+}
+
+.mission_info {
+    margin: 0;
+}
+
+.rocket_title {
+    margin: 0;
+}
+
+.rocket_info {
+    margin: 0;
+}
+
+.details {
+    padding-top: 32px;
+}
+
+.details_title {
+    margin: 0;
+}
+
+.details_info {
+    margin: 0;
+}
+
+
+@media (max-width: 768px) {
+    .modal {
+        padding: 12px 16px;
+    }
+
+    .image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .details {
+        padding-top: 16px;
+    }
+}
+
