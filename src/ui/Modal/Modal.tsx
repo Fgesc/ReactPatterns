@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { type typeLaunches } from '../../types/typeLaunches';
+import stub from '../../assets/stub.png'
 import styles from './modal.module.css';
-
 
 type Props = {
   launch: typeLaunches;
@@ -15,7 +15,7 @@ export const Modal =  memo(({ launch }: Props) => {
             <h3 className={styles.modal_title}>{launch.mission_name}</h3>
 
             <img
-                src={launch.links.mission_patch || launch.links.mission_patch_small || 'src/assets/stub.png'}
+                src={launch.links.mission_patch || launch.links.mission_patch_small || stub}
                 alt={launch.mission_name}
                 className={styles.image}
             />

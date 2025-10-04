@@ -1,6 +1,7 @@
 import { Card, Image, Text, Button, Stack } from '@mantine/core';
 import { useModal } from '../../hooks/useModal';
 import { type typeLaunches } from '../../types/typeLaunches';
+import stub from '../../assets/stub.png'
 
 type LaunchCardProps = {
     launch: typeLaunches;
@@ -22,12 +23,12 @@ export const LaunchCard = ({ launch }: LaunchCardProps) => {
         >
             <Stack h='100%' align='center' gap='md'>
                 <Image
-                    src={launch.links.mission_patch_small}
+                    src={launch.links.mission_patch_small || stub}
                     alt={launch.mission_name}
                     height={140}
                     width={140}
                     fit='contain'
-                    fallbackSrc='src/assets/stub.png'
+                    fallbackSrc={stub}
                 />
 
                 <Stack gap={24} align='center'>
