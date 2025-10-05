@@ -3,7 +3,7 @@ import { HTTPError } from 'ky';
 import { LaunchesPage } from '../LaunchesPage/LaunchesPage';
 import { CustomLoader } from '../../ui/Loader';
 import { ModalProvider } from '../../providers/ModalProvider';
-import launchService from '../../api/launchesService';
+import LaunchService from '../../api/LaunchesService';
 import { launchesReducer, type LaunchesState } from '../../redusers/launchesReducer';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
     const loadLaunches = useCallback(async () => {
         dispatch({ type: 'fetch_start' });
         try {
-            const newLaunches = await launchService.getAll();
+            const newLaunches = await LaunchService.getAll();
             // console.log( newLaunches);
             dispatch({ type: 'fetch_success', payload: newLaunches });
         } catch (e) {
@@ -53,9 +53,7 @@ function App() {
 
     return (
         <ModalProvider>
-            {state.status === 'error' && (
-                <h1 data-testid='app-error-message'>Произошла ошибка: {state.error}</h1>
-            )}
+            {state.status === 'error' && ( <h1 data-testid='app-error-message'>Произошла ошибка: {state.error}</h1>)}
             <LaunchesPage launches={state.launches} />
             {state.status === 'loading' && <CustomLoader />}
         </ModalProvider>
@@ -63,5 +61,4 @@ function App() {
 }
 
 export default App;
-
 

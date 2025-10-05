@@ -1,7 +1,7 @@
 import ky from 'ky';
 import type { typeLaunches } from '../types/typeLaunches';
 
-export default class launchesService {
+export default class LaunchesService {
     static async getAll() {
         const data = await ky
             .get<typeLaunches[]> ('https://api.spacexdata.com/v3/launches', {

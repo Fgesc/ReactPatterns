@@ -16,7 +16,7 @@ export const ModalWrapper = ({ onClose, children }: ModalWrapperProps) => {
     return (
         <div className={styles.modalOverlay} onClick={handleOverlayClick}>
             <div className={styles.modalContainer} onClick={handleContainerClick}>
-                <button className={styles.modalClose} onClick={onClose}>
+                <button data-testid='closeButtonModal' className={styles.modalClose} onClick={onClose}>
                     ✖
                 </button>
                 {children}

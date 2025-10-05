@@ -20,6 +20,7 @@ export const LaunchCard = ({ launch }: LaunchCardProps) => {
             p={32}
             pb={32}
             m={0}
+            data-testid ='launch-card'
         >
             <Stack h='100%' align='center' gap='md'>
                 <Image

@@ -9,7 +9,7 @@ type LaunchesListProp = {
 
 export const LaunchesPage = memo(({ launches }: LaunchesListProp) => {
     return (
-        <main data-testid='main-content' style={{ padding: '16px' }}>
+        <main data-testid='launches-page' style={{ padding: '16px' }}>
             <Container size='lg' px='md'>
 
                 <Title order={1} ta='center' mb='md' fw={900}>
@@ -17,7 +17,7 @@ export const LaunchesPage = memo(({ launches }: LaunchesListProp) => {
                 </Title>
 
                 <Grid
-                    data-testid='products-grid'
+                    data-testid='launches-grid'
                     gutter = {24}
                     style={{ maxWidth: '968px', margin: '0 auto' }}
                 >

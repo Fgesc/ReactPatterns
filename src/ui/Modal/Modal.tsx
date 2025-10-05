@@ -10,7 +10,7 @@ type Props = {
 export const Modal =  memo(({ launch }: Props) => {
     // console.log( launch.links);
     return (
-        <div className={styles.modal}>
+        <div data-testid='modalLaunch' className={styles.modal}>
 
             <h3 className={styles.modal_title}>{launch.mission_name}</h3>
 
