@@ -3,8 +3,9 @@ import { HTTPError } from 'ky';
 import { LaunchesPage } from '../LaunchesPage/LaunchesPage';
 import { CustomLoader } from '../../ui/Loader';
 import { ModalProvider } from '../../providers/ModalProvider';
-import LaunchService from '../../api/LaunchesService';
+import LaunchesService from '../../api/LaunchesService';
 import { launchesReducer, type LaunchesState } from '../../redusers/launchesReducer';
+
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
     const loadLaunches = useCallback(async () => {
         dispatch({ type: 'fetch_start' });
         try {
-            const newLaunches = await LaunchService.getAll();
+            const newLaunches = await LaunchesService.getAll();
             // console.log( newLaunches);
             dispatch({ type: 'fetch_success', payload: newLaunches });
         } catch (e) {
